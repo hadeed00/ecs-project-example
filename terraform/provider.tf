@@ -8,11 +8,11 @@ terraform {
 
   required_version = ">= 1.3"
   backend "s3" {
-    bucket         = "your-terraform-state-bucket"
-    key            = "ecs-threat-modeler/terraform.tfstate"
-    region         = var.aws_region
-    encrypt        = true
-    dynamodb_table = "terraform-locks"
+    bucket = "ecs-threat-modeler-tf-state"
+    key    = "terraform.tfstate"
+    region = "eu-west-2"
+    # dynamodb_table = "terraform-locks"
+    encrypt = true
   }
 }
 

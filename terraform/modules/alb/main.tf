@@ -57,7 +57,7 @@ resource "aws_lb_listener" "http" {
     #   status_code = "HTTP_301"
     # }
 
-    type = "forward"
+    type             = "forward"
     target_group_arn = aws_lb_target_group.ecs_target.arn
   }
 }

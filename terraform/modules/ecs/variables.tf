@@ -1,8 +1,8 @@
 variable "app_name" {
-    type = string
+  type = string
 }
 variable "aws_region" {
-  type    = string
+  type = string
 }
 
 variable "ecr_image_url" {

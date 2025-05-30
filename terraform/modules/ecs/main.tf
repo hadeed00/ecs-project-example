@@ -12,8 +12,8 @@ resource "aws_ecs_task_definition" "app" {
 
   container_definitions = jsonencode([
     {
-      name      = var.app_name
-      image     = var.ecr_image_url
+      name  = var.app_name
+      image = var.ecr_image_url
       portMappings = [
         {
           containerPort = 80
@@ -50,9 +50,9 @@ resource "aws_ecs_service" "app" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets         = var.public_subnets
+    subnets          = var.public_subnets
     assign_public_ip = true
-    security_groups = [aws_security_group.ecs_sg.id]
+    security_groups  = [aws_security_group.ecs_sg.id]
   }
 
   load_balancer {
